@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="omni">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0259214213193198 0.162879009572641 0.138860851033637"
+        rpy="0 0 0" />
+      <mass
+        value="1.0412265445781" />
+      <inertia
+        ixx="0.0123484176674689"
+        ixy="-4.24972557144798E-14"
+        ixz="-1.62076264341875E-06"
+        iyy="0.0123484834789265"
+        iyz="-9.17988207387215E-15"
+        izz="0.0246208820185888" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_banh_truoc">
+    <inertial>
+      <origin
+        xyz="-4.53477005946112E-09 7.15916777249692E-09 0.00698819039316995"
+        rpy="0 0 0" />
+      <mass
+        value="0.0811823538136653" />
+      <inertia
+        ixx="2.56917243139319E-05"
+        ixy="-6.71027667419078E-12"
+        ixz="8.16032721301688E-13"
+        iyy="2.56917400940774E-05"
+        iyz="-3.14034227721853E-13"
+        izz="4.95985820980329E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_banh_truoc.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_banh_truoc.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_banh_truoc"
+    type="continuous">
+    <origin
+      xyz="0.29476 0.16288 0.083082"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_banh_truoc" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="10"
+      friction="10" />
+  </joint>
+  <link
+    name="link_banh_phai">
+    <inertial>
+      <origin
+        xyz="-4.53477001782776E-09 7.15916775861913E-09 0.00698819039316997"
+        rpy="0 0 0" />
+      <mass
+        value="0.0811823538136654" />
+      <inertia
+        ixx="2.5691724313932E-05"
+        ixy="-6.71027668237178E-12"
+        ixz="8.16032726138774E-13"
+        iyy="2.56917400940774E-05"
+        iyz="-3.14034228029712E-13"
+        izz="4.9598582098033E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_banh_phai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_banh_phai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_banh_phai"
+    type="continuous">
+    <origin
+      xyz="-0.11519 -0.073806 0.083082"
+      rpy="-1.5708 0 -0.5236" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_banh_phai" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="10"
+      friction="10" />
+  </joint>
+  <link
+    name="link_banh_trai">
+    <inertial>
+      <origin
+        xyz="-4.53477003170555E-09 7.15916773086356E-09 0.00698819039316984"
+        rpy="0 0 0" />
+      <mass
+        value="0.0811823538136656" />
+      <inertia
+        ixx="2.5691724313932E-05"
+        ixy="-6.71027666578851E-12"
+        ixz="8.16032722995754E-13"
+        iyy="2.56917400940775E-05"
+        iyz="-3.1403422456719E-13"
+        izz="4.95985820980331E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_banh_trai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_banh_trai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_banh_trai"
+    type="continuous">
+    <origin
+      xyz="-0.11519 0.39956 0.083082"
+      rpy="-1.5708 0 -2.618" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_banh_trai" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="10"
+      friction="10" />
+  </joint>
+  <link
+    name="link_lidar">
+    <inertial>
+      <origin
+        xyz="-0.00676653011666364 9.19261110876868E-05 -0.00738187226715967"
+        rpy="0 0 0" />
+      <mass
+        value="1.33076913637071" />
+      <inertia
+        ixx="0.000614917940454086"
+        ixy="-8.01984318965835E-07"
+        ixz="-0.000158243025911163"
+        iyy="0.0009606973356172"
+        iyz="3.09162986587753E-06"
+        izz="0.00109815200027134" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_lidar"
+    type="fixed">
+    <origin
+      xyz="0.021464 0.16288 0.15973"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_imu">
+    <inertial>
+      <origin
+        xyz="0.000343348408752164 -0.000759450478302254 -0.000384761316868265"
+        rpy="0 0 0" />
+      <mass
+        value="0.000491630657107431" />
+      <inertia
+        ixx="3.63603146259295E-08"
+        ixy="-8.68518895704074E-11"
+        ixz="-1.03040853232617E-10"
+        iyy="1.05219690062939E-08"
+        iyz="1.20559518329745E-10"
+        izz="2.60740156632657E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_imu.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_imu.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_imu"
+    type="fixed">
+    <origin
+      xyz="0.26336 0.16336 0.2214"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_imu" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_camera">
+    <inertial>
+      <origin
+        xyz="-0.0153272620957812 -7.80161395946832E-05 -0.000379610186590801"
+        rpy="0 0 0" />
+      <mass
+        value="0.00598335612074956" />
+      <inertia
+        ixx="5.72087060459181E-07"
+        ixy="-2.00884934205521E-11"
+        ixz="-4.44462901755472E-11"
+        iyy="5.15935966193685E-07"
+        iyz="-6.22984830331086E-14"
+        izz="5.2853041783924E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_camera"
+    type="fixed">
+    <origin
+      xyz="0.29293 0.16288 0.21083"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_arm_1">
+    <inertial>
+      <origin
+        xyz="-3.53883589099269E-16 1.9373391779709E-14 0.0266189965554682"
+        rpy="0 0 0" />
+      <mass
+        value="0.244457948195772" />
+      <inertia
+        ixx="0.00032922625156156"
+        ixy="-2.73754653756737E-07"
+        ixz="-2.36962213247674E-18"
+        iyy="0.000320688548411151"
+        iyz="2.04283016550639E-20"
+        izz="0.00013424881463892" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_arm_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_arm_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_arm_1"
+    type="revolute">
+    <origin
+      xyz="0.021464 0.16288 0.21408"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_arm_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="10"
+      friction="10" />
+  </joint>
+  <link
+    name="link_arm_2">
+    <inertial>
+      <origin
+        xyz="0.10398931948016 0.0080766599050065 -3.69996810967166E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.15660733223008" />
+      <inertia
+        ixx="6.23424959483214E-05"
+        ixy="7.18807583184949E-05"
+        ixz="-1.03021331076441E-10"
+        iyy="0.000579413982998702"
+        iyz="1.83218121875942E-11"
+        izz="0.000623245798049505" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_arm_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omni/meshes/link_arm_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_arm_2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.2"
+      rpy="1.5708 0 -0.03202" />
+    <parent
+      link="link_arm_1" />
+    <child
+      link="link_arm_2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="0"
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="10"
+      friction="10" />
+  </joint>
+
+
+  <gazebo reference="link_lidar">
+   <sensor type="ray" name="lidar_sensor">
+     <pose>0 0 0 0 0 0</pose>
+     <visualize>true</visualize>
+     <update_rate>30</update_rate>
+     <ray>
+    <scan>
+      <horizontal>
+        <samples>720</samples>
+        <resolution>1</resolution>
+        <min_angle>-3.1416</min_angle>
+        <max_angle>3.1416</max_angle>
+      </horizontal>
+    </scan>
+    <range>
+      <min>0.1</min>
+      <max>30.0</max>
+      <resolution>0.01</resolution>
+    </range>
+    <noise>
+      <type>gaussian</type>
+      <mean>0.0</mean>
+      <stddev>0.01</stddev>
+    </noise>
+     </ray>
+     <plugin name="gazebo_ros_laser" filename="libgazebo_ros_laser.so">
+    <topicName>/scan</topicName>
+    <frameName>link_lidar</frameName>
+     </plugin>
+   </sensor>
+    </gazebo>
+
+  <gazebo reference="link_imu">
+  <sensor name="imu_sensor" type="imu">
+    <always_on>true</always_on>
+    <update_rate>100</update_rate>
+    <visualize>true</visualize> <!-- Bật hiển thị mũi tên -->
+    <scale>0.1 0.1 0.1</scale>
+    <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+      <topicName>/imu</topicName>
+      <bodyName>link_imu</bodyName>
+      <frameName>link_imu</frameName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset> <!-- Không offset góc dữ liệu -->
+      <initialOrientationAsReference>false</initialOrientationAsReference>
+    </plugin>
+    <pose>0 0 0 0 1.5708 0</pose> <!-- Xoay 90 độ quanh trục Y để mũi tên hướng theo X -->
+  </sensor>
+</gazebo>
+
+
+<!-- camera -->
+<gazebo reference="link_camera">
+  <material>Gazebo/Red</material>
+
+  <sensor name="camera" type="camera">
+      <pose> 0 0 0 0 0 0 </pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <camera>
+          <horizontal_fov>1.089</horizontal_fov>
+          <image>
+              <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+          </image>
+          <clip>
+              <near>0.05</near>
+              <far>8.0</far>
+          </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <frame_name>link_camera</frame_name>
+      </plugin>
+  </sensor>
+</gazebo>
+
+
+<!-- <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>30.0</odometryRate>s
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo> 
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="joint_banh_truoc">
+    <material>Gazebo/Black</material>
+	<turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <gazebo reference="joint_banh_trai">
+    <material>Gazebo/Black</material>
+	<turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <gazebo reference="joint_banh_phai">
+    <material>Gazebo/Black</material>
+	<turnGravityOff>false</turnGravityOff>
+  </gazebo> -->
+
+
+<!-- Transmission cho bánh xe -->
+  <transmission name="left_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_banh_trai">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_banh_phai">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="front_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_banh_truoc">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_wheel_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+    <gazebo>
+      <plugin name ="gazebo_ros_control" filename = "libgazebo_ros_control.so">
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+    </gazebo>
+
+</robot>

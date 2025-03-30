@@ -1,0 +1,19 @@
+joint_state_controller:
+  type: "joint_state_controller/JointStateController"
+  publish_rate: 50
+
+# Controller to control robot base jointss
+left_wheel_joint_velocity_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: "joint_banh_trai"
+  pid: {p: 100.0, i: 0.1, d: 10.0}
+
+right_wheel_joint_velocity_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: "joint_banh_phai"
+  pid: {p: 100.0, i: 0.1, d: 10.0}
+
+front_wheel_joint_velocity_controller:
+  type: "velocity_controllers/JointVelocityController"
+  joint: "joint_banh_truoc"
+  pid: {p: 100.0, i: 0.1, d: 10.0}
