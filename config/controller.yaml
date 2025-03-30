@@ -17,3 +17,13 @@ front_wheel_joint_velocity_controller:
   type: "velocity_controllers/JointVelocityController"
   joint: "joint_banh_truoc"
   pid: {p: 100.0, i: 0.1, d: 10.0}
+
+arm_1_joint_controller:
+  type: "position_controllers/JointPositionController"
+  joint: "joint_arm_1"
+  pid: {p: 100.0, i: 0.05, d: 1.0}
+
+arm_2_joint_controller:
+  type: "position_controllers/JointPositionController"
+  joint: "joint_arm_2"
+  pid: {p: 100.0, i: 0.05, d: 1.0}

@@ -24,5 +24,8 @@
         pkg="controller_manager"
         type="spawner"
         args="joint_state_controller left_wheel_joint_velocity_controller right_wheel_joint_velocity_controller front_wheel_joint_velocity_controller" />
+        
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="arm_1_joint_controller arm_2_joint_controller" />
 
 </launch>

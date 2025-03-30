@@ -426,11 +426,11 @@
     <limit
       lower="0"
       upper="3.14"
-      effort="10"
+      effort="100"
       velocity="10" />
     <dynamics
-      damping="10"
-      friction="10" />
+      damping="0.1"
+      friction="0.1" />
   </joint>
   <link
     name="link_arm_2">
@@ -487,11 +487,11 @@
     <limit
       lower="-1.57"
       upper="0"
-      effort="10"
+      effort="100"
       velocity="10" />
     <dynamics
-      damping="10"
-      friction="10" />
+      damping="0.1"
+      friction="0.1" />
   </joint>
 
 
@@ -550,7 +550,6 @@
 <!-- camera -->
 <gazebo reference="link_camera">
   <material>Gazebo/Red</material>
-
   <sensor name="camera" type="camera">
       <pose> 0 0 0 0 0 0 </pose>
       <visualize>true</visualize>
@@ -569,6 +568,7 @@
       </camera>
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
           <frame_name>link_camera</frame_name>
+          <cameraName>camera</cameraName>
       </plugin>
   </sensor>
 </gazebo>
@@ -630,6 +630,26 @@
       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
     <actuator name="front_wheel_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="arm_1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_arm_1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="arm_1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="arm_2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_arm_2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="arm_2_motor">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
