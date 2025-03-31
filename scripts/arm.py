@@ -13,7 +13,6 @@ msg = """
     Nhấn 'd' để giảm joint_2
     Nhấn 'q' để thoát
 
-
 """
 
 # Mức điều chỉnh góc mỗi lần nhấn phím (radians)
