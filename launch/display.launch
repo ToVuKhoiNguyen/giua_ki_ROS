@@ -16,5 +16,6 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find omni)/urdf.rviz" />
+    args="-d $(find omni)/rviz/omni.rviz"
+    output="screen"/>
 </launch>

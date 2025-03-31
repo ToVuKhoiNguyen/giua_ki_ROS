@@ -532,7 +532,7 @@
     <always_on>true</always_on>
     <update_rate>100</update_rate>
     <visualize>true</visualize> 
-    <scale>0.1 0.1 0.1</scale>
+    <scale>0.005 0.005 0.005</scale>
     <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
       <topicName>/imu</topicName>
       <bodyName>link_imu</bodyName>
@@ -542,7 +542,7 @@
       <rpyOffset>0 0 0</rpyOffset> 
       <initialOrientationAsReference>false</initialOrientationAsReference>
     </plugin>
-    <pose>0 0 0 0 1.5708 0</pose> 
+    <pose>0 0 0 0 0 0</pose> 
   </sensor>
   </gazebo>
 
