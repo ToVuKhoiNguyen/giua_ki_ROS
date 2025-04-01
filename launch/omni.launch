@@ -1,5 +1,5 @@
 <launch>
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(find omni)/worlds/empty.world"/>
         <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="false"/>
@@ -14,16 +14,14 @@
           args="-urdf -model omni -param robot_description"/>
 
     <rosparam command="load" file="$(find omni)/config/controller.yaml" />
-    <node
-        name="wheel_controller_spawner"
-        pkg="controller_manager"
-        type="spawner"
-        args="joint_state_controller left_wheel_joint_velocity_controller right_wheel_joint_velocity_controller front_wheel_joint_velocity_controller" />
-        
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
-        args="arm_1_joint_controller arm_2_joint_controller" />
-      <arg
-    name="model" />
-   
 
+    <node name="wheel_controller_spawner" pkg="controller_manager" type="spawner"
+          args="joint_state_controller left_wheel_joint_velocity_controller right_wheel_joint_velocity_controller front_wheel_joint_velocity_controller" />
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+          args="arm_1_joint_controller arm_2_joint_controller" />
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find omni)/rviz/omni.rviz" output="screen"/>
 </launch>

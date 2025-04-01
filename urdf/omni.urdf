@@ -424,7 +424,7 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
+      lower="-3.14"
       upper="3.14"
       effort="100"
       velocity="10" />
@@ -486,7 +486,7 @@
       xyz="0 0 -1" />
     <limit
       lower="-1.57"
-      upper="1.57"
+      upper="0.79"
       effort="100"
       velocity="10" />
     <dynamics
@@ -505,8 +505,8 @@
       <horizontal>
         <samples>720</samples>
         <resolution>1</resolution>
-        <min_angle>-3.1416</min_angle>
-        <max_angle>3.1416</max_angle>
+        <min_angle>-1.57</min_angle>
+        <max_angle>1.57</max_angle>
       </horizontal>
     </scan>
     <range>
@@ -530,7 +530,7 @@
   <gazebo reference="link_imu">
   <sensor name="imu_sensor" type="imu">
     <always_on>true</always_on>
-    <update_rate>100</update_rate>
+    <update_rate>1000</update_rate>
     <visualize>true</visualize> 
     <scale>0.005 0.005 0.005</scale>
     <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
@@ -546,9 +546,8 @@
   </sensor>
   </gazebo>
 
-
 <gazebo reference="link_camera">
-  <material>Gazebo/Red</material> <!-- Để hiển thị hình ảnh camera trên Gazebo -->
+  <material>Gazebo/Red</material> 
   
   <sensor name="camera1" type="camera">
     <pose>0 0 0 0 0 0</pose>
@@ -556,7 +555,7 @@
     <update_rate>30.0</update_rate>
 
     <camera name="head">
-      <horizontal_fov>1.089</horizontal_fov> <!-- Chọn giá trị hợp lý -->
+      <horizontal_fov>1.089</horizontal_fov> 
       <image>
         <width>800</width>
         <height>800</height>
@@ -564,7 +563,7 @@
       </image>
       <clip>
         <near>0.02</near>
-        <far>8.0</far> <!-- Giữ giới hạn xa phù hợp -->
+        <far>8.0</far> 
       </clip>
       <noise>
         <type>gaussian</type>
@@ -579,7 +578,7 @@
       <cameraName>rrbot/camera1</cameraName>
       <imageTopicName>/camera/image_raw</imageTopicName>
       <cameraInfoTopicName>/camera/camera_info</cameraInfoTopicName>
-      <frameName>link_camera</frameName> <!-- Đảm bảo frame_name đồng nhất -->
+      <frameName>link_camera</frameName> 
       <hackBaseline>0.07</hackBaseline>
       <distortionK1>0.0</distortionK1>
       <distortionK2>0.0</distortionK2>
@@ -589,70 +588,6 @@
     </plugin>
   </sensor>
 </gazebo>
-
-
-<!-- <gazebo reference="link_camera">
-  <sensor type="camera" name="camera1">
-    <update_rate>30.0</update_rate>
-    <camera name="head">
-      <horizontal_fov>1.3962634</horizontal_fov>
-      <image>
-        <width>800</width>
-        <height>800</height>
-        <format>R8G8B8</format>
-      </image>
-      <clip>
-        <near>0.02</near>
-        <far>300</far>
-      </clip>
-      <noise>
-        <type>gaussian</type>
-        <mean>0.0</mean>
-        <stddev>0.007</stddev>
-      </noise>
-    </camera>
-    <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-      <alwaysOn>true</alwaysOn>
-      <updateRate>0.0</updateRate>
-      <cameraName>rrbot/camera1</cameraName>
-      <imageTopicName>image_raw</imageTopicName>
-      <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-      <frameName>link_camera</frameName>  
-      <hackBaseline>0.07</hackBaseline>
-      <distortionK1>0.0</distortionK1>
-      <distortionK2>0.0</distortionK2>
-      <distortionK3>0.0</distortionK3>
-      <distortionT1>0.0</distortionT1>
-      <distortionT2>0.0</distortionT2>
-    </plugin>
-  </sensor>
-</gazebo>
-
-<gazebo reference="link_camera">
-  <material>Gazebo/Red</material>
-  <sensor name="camera" type="camera">
-      <pose> 0 0 0 0 0 0 </pose>
-      <visualize>true</visualize>
-      <update_rate>10</update_rate>
-      <camera>
-          <horizontal_fov>1.089</horizontal_fov>
-          <image>
-              <format>R8G8B8</format>
-              <width>640</width>
-              <height>480</height>
-          </image>
-          <clip>
-              <near>0.05</near>
-              <far>8.0</far>
-          </clip>
-      </camera>
-      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-          <frame_name>link_camera</frame_name>
-          <cameraName>camera</cameraName>
-      </plugin>
-  </sensor>
-</gazebo> --> 
-
 
 <!-- <gazebo>
     <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
