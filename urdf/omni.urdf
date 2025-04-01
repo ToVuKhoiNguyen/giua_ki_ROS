@@ -589,34 +589,6 @@
   </sensor>
 </gazebo>
 
-<!-- <gazebo>
-    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <odometryRate>30.0</odometryRate>s
-      <robotBaseFrame>base_link</robotBaseFrame>
-    </plugin>
-  </gazebo> 
-
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-    <turnGravityOff>false</turnGravityOff>
-  </gazebo>
-
-  <gazebo reference="joint_banh_truoc">
-    <material>Gazebo/Black</material>
-	<turnGravityOff>false</turnGravityOff>
-  </gazebo>
-  <gazebo reference="joint_banh_trai">
-    <material>Gazebo/Black</material>
-	<turnGravityOff>false</turnGravityOff>
-  </gazebo>
-  <gazebo reference="joint_banh_phai">
-    <material>Gazebo/Black</material>
-	<turnGravityOff>false</turnGravityOff>
-  </gazebo> -->
-
   <transmission name="left_wheel_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint_banh_trai">
@@ -667,10 +639,10 @@
     </actuator>
   </transmission>
 
-    <gazebo>
+  <gazebo>
       <plugin name ="gazebo_ros_control" filename = "libgazebo_ros_control.so">
         <robotNamespace>/</robotNamespace>
       </plugin>
-    </gazebo>
+  </gazebo>
 
 </robot>
