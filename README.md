@@ -1,17 +1,27 @@
-## Mở Gazebo và Rviz
-Mở một terminal mới:  
+# MID-TERM 
+# Mô tả
+Mô phỏng Robot Omni ba bánh và tay máy trong Gazebo và mô tả trong Rviz. Xe có thể di chuyển bằng bàn phím (bao gồm cả xe và tay máy), đồng thời có thể đọc được các cảm biến IMU, LidDAR, Camera.
+# 1. Setup môi trường
+   ROS, Gazebo, Rviz
+   Download source: ```
+    git clone https://github.com/ToVuKhoiNguyen/omni
+    ```
+   Đảm bảo không gian làm việc: ```
+     catkin_make
+     source devel/setup.bash
+    ```
+# Các bước thực hiện :
+# 1. Chạy Gazebo và Rviz
+```
 roslaunch omni omni.launch
-
-## Điều khiển xe  
-Mở một terminal mới, chạy lệnh:  
-rosrun omni control.py
-
-## Điều khiển tay máy
-Mở một terminal khác:  
-rosrun omni arm.py   
-  
-## Check /scan – vật cản và camera trong map  
-Có thể tắt IMU để quan sát rõ hơn. 
-RViz sẽ hiển thị vật cản khi robot quét.  
-Khi robot di chuyển, TF xoay theo chuyển động bánh xe và tay máy. Tay máy lúc này vẫn đang chạy trong vòng lặp.  
-Có thể mở terminal khác để kiểm tra các topic của cảm biến
+```
+# 3. Điều khiển xe 
+```
+rosrun omni control.py 
+``
+# 3. Điều khiển tay máy
+```
+rosrun omni arm.py
+``
+# 4. Link video demo : 
+https://drive.google.com/file/d/1ku3pGa2G42McpiYHarjgyWkxFSMXIxWk/view?usp=drive_link
