@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import rospy
 import sys
 import tty
@@ -13,11 +12,12 @@ class OmniWheelControl:
         self.wheel_front_pub = rospy.Publisher('/front_wheel_joint_velocity_controller/command', Float64, queue_size=10)
         self.wheel_left_pub = rospy.Publisher('/left_wheel_joint_velocity_controller/command', Float64, queue_size=10)
         self.wheel_right_pub = rospy.Publisher('/right_wheel_joint_velocity_controller/command', Float64, queue_size=10)
+        self.cmd_vel_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
         rospy.Subscriber('/cmd_vel', Twist, self.cmd_vel_callback)
-        rospy.sleep(1)  
+        rospy.sleep(1)
 
-        self.R = 0.25  
-        self.speed_limit = 4.0  
+        self.R = 0.25
+        self.speed_limit = 4.0
         self.wheel_front_vel = 0.0
         self.wheel_left_vel = 0.0
         self.wheel_right_vel = 0.0
@@ -28,7 +28,7 @@ class OmniWheelControl:
         Vy = msg.linear.y   
         Wz = msg.angular.z  
 
-        if Wz != 0:  
+        if Wz != 0:
             self.wheel_front_vel = Wz
             self.wheel_left_vel = Wz
             self.wheel_right_vel = Wz
@@ -36,11 +36,11 @@ class OmniWheelControl:
             self.wheel_front_vel = -Wz * self.R
             self.wheel_left_vel = Vx - Wz * self.R
             self.wheel_right_vel = -Vx - Wz * self.R
-        elif Vy > 0: 
+        elif Vy > 0:
             self.wheel_front_vel = -Vy
             self.wheel_left_vel = 0.0
             self.wheel_right_vel = Vy
-        elif Vy < 0:  
+        elif Vy < 0:
             self.wheel_front_vel = -Vy
             self.wheel_left_vel = Vy
             self.wheel_right_vel = 0.0
@@ -81,22 +81,22 @@ class OmniWheelControl:
             rospy.loginfo(f"Phím đang nhấn: {key}")
             Vx, Vy, Wz = 0.0, 0.0, 0.0
 
-            if key == 'w':  
+            if key == 'w':
                 Vx = self.speed_limit
-            elif key == 's':  
+            elif key == 's':
                 Vx = -self.speed_limit
-            elif key == 'a':  
+            elif key == 'a':
                 Vy = self.speed_limit
-            elif key == 'd':  
+            elif key == 'd':
                 Vy = -self.speed_limit
-            elif key == 'q':  
+            elif key == 'q':
                 Wz = -self.speed_limit
-            elif key == 'e':  
+            elif key == 'e':
                 Wz = self.speed_limit
-            elif key == 'k':  
+            elif key == 'k':
                 self.stop_robot()
                 continue
-            elif key == 'x':  
+            elif key == 'x':
                 self.stop_robot()
                 self.running = False
                 break
@@ -105,8 +105,10 @@ class OmniWheelControl:
             twist_msg.linear.x = Vx
             twist_msg.linear.y = Vy
             twist_msg.angular.z = Wz
+
+            self.cmd_vel_pub.publish(twist_msg)
             self.cmd_vel_callback(twist_msg)
-            rospy.sleep(0.1) 
+            rospy.sleep(0.1)
 
         self.cmd_vel_callback(Twist())
 
